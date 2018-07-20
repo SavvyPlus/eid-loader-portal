@@ -1,0 +1,31 @@
+{% extends "album.html" %}
+
+{% block content %}
+
+<!-- <form method="post" enctype="multipart/form-data">
+
+    {{ form.file }}
+    <input type="submit">
+</form> -->
+
+<h1>Upload file to S3 bucket</h1>
+<hr>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="list-unstyled">
+       {% for message in messages %}
+       <li class="text-primary">{{ message }}</li>
+       {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+<form method="post"  enctype="multipart/form-data">
+  {% from "_formhelpers.html" import render_field %}
+
+  {{ render_field(form.file) }}
+  {{ render_field(form.eid_format) }}
+  <button type="submit" class="btn btn-info">Submit</button>
+
+</form>
+
+{% endblock %}
