@@ -1,3 +1,3 @@
 INV_BUCKET = "inv-loader"
 PREFIX_INV_IN_FOLDER = "in/"
-INV_UPLOAD_FOLDER = "tmp/"
+INV_UPLOAD_FOLDER = ""
